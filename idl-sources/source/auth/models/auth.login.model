@@ -1,0 +1,14 @@
+data EmailPassword {
+    email    : str
+    password : str
+}
+
+data PhonePassword {
+    phone    : str
+    password : str
+}
+
+adt Credentials {
+    PhonePassword
+    EmailPassword
+}

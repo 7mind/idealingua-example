@@ -1,0 +1,44 @@
+{
+    "sbtUser" : "",
+    "sbtPassword" : "",
+    "common" : {
+      "izumiVersion" : "0.7.0",
+      "version" : {
+        "version" : "0.1.0",
+        "release" : false,
+        "snapshotQualifier" : "SNAPSHOT"
+      },
+      "name": "scala-workshop-sample-api",
+      "group": "com.septimalmind.api",
+      "tags": [],
+      "description": "Scala Workshop Sample API",
+      "releaseNotes": "",
+      "publisher": {
+        "name": "Scala Group",
+        "id": "com.septimalmind"
+      },
+      "licenses": [
+        {
+          "name": "EULA",
+          "url": {
+            "url": "https://somelicence.net/licensing"
+          }
+        }
+      ],
+      "website": {
+        "url": "https://somesite.com"
+      },
+      "copyright": "Copyright (C) Some Copyright."
+    },
+    "layout" : "SBT",
+    "sbt" : {
+      "projectNaming" : {
+        "prefix" : [],
+        "dropFQNSegments" : 2,
+        "postfix" : [
+          "api"
+        ]
+      }
+    }
+  }
+  

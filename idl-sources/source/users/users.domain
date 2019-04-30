@@ -1,0 +1,16 @@
+package com.septimalmind.services.users
+
+import com.septimalmind.services.companies. {
+    CompanyId
+}
+
+import com.septimalmind.services.shared. {
+    OffsetLimit,
+    Ordering, 
+    DomainFailure,
+    SuccessResponse
+}
+
+alias Ord = com.septimalmind.services.shared#Ordering
+
+include "users/models/users.profile.model"

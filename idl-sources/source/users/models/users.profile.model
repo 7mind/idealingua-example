@@ -1,0 +1,53 @@
+enum Role {
+    Admin
+    Member
+    Unauthorized
+}
+
+id UserId {
+    _ : uid
+    company: uid
+}
+
+mixin PublicProfile {
+    name    : str
+    email   : str 
+    phone   : str
+}
+
+mixin ProtectedProfile {
+    password : str
+    role     : Role
+}
+
+data UserData {
+    + PublicProfile
+    + ProtectedProfile
+    active   : bool
+}
+
+data UserProfile {
+    + PublicProfile
+    + ProtectedProfile
+    id : UserId
+    active   : bool
+}
+
+data CreateUserRequest {
+    + ProtectedProfile
+    + PublicProfile
+}
+
+data QueryingResponse {
+    total: int
+    entries: list[UserProfile]
+    offsetLimit: OffsetLimit
+}
+
+// only for administrative purpose
+service UserProfileService {
+    def register(profile: CreateUserRequest)                         : UserProfile       !! DomainFailure
+    def updatePublicInfo(id: UserId, publicData: PublicProfile)      : UserProfile       !! DomainFailure
+    def remove(id: UserId)                                           : SuccessResponse   !! DomainFailure
+    def retrieveUsers(limitOffset: OffsetLimit, ordering: opt[Ord])  : QueryingResponse  !! DomainFailure  
+}

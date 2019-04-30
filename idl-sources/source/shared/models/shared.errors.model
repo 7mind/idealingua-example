@@ -1,0 +1,40 @@
+mixin ErrorBase {
+    message: opt[str]
+}
+
+data EntityNotFound {
+    &ErrorBase
+}
+
+data EntityExists {
+    &ErrorBase
+}
+
+data AssertionFailed {
+    &ErrorBase
+}
+
+data Unexpected {
+    &ErrorBase
+}
+
+data Unknown {
+    &ErrorBase
+}
+
+data AccessDenied {
+    &ErrorBase
+}
+
+adt DomainFailure {
+    EntityNotFound
+    EntityExists
+    AssertionFailed
+    Unexpected
+    Unknown
+    AccessDenied
+}
+
+data SuccessResponse {
+    message: opt[str]
+}

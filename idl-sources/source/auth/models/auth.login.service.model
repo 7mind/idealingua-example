@@ -1,0 +1,15 @@
+data AccessResponse {
+    accessToken: str
+}
+
+data SignUpRequest {
+    + ProtectedProfile
+    + PublicProfile
+    - role : Role
+}
+
+service LoginService {
+    def login(creds: Credentials)       :     AccessResponse    !! DomainFailure
+    def signUp(request: SignUpRequest)  :     AccessResponse    !! DomainFailure 
+    def logout()                        :     SuccessResponse   !! DomainFailure
+}

@@ -1,0 +1,19 @@
+package com.septimalmind.services.auth
+
+import com.septimalmind.services.companies.{
+    CompanyId
+}
+
+import com.septimalmind.services.users.{
+    Role,
+    PublicProfile,
+    ProtectedProfile
+}
+
+import com.septimalmind.services.shared.{
+    DomainFailure,
+    SuccessResponse
+}
+
+include "auth/models/auth.login.model"
+include "auth/models/auth.login.service.model"

@@ -1,0 +1,11 @@
+{
+    "version": "0.1.0",
+    "release": false,
+    "snapshotQualifiers": {
+      "scala": "SNAPSHOT",
+      "typescript": "b.",
+      "go": "SNAPSHOT",
+      "csharp": "alpha"
+    }
+  }
+  

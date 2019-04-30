@@ -1,0 +1,10 @@
+data OffsetLimit {
+    limit: i16
+    offset: i32
+}
+
+enum Ordering {
+    ASC
+    DESC
+}
+

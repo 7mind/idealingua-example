@@ -1,0 +1,4 @@
+package com.septimalmind.services.shared
+
+include "shared/models/shared.errors.model"
+include "shared/models/shared.querying.model"
