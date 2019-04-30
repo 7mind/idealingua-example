@@ -1,0 +1,61 @@
+{
+    "common": {
+      "name": "scala-workshop-sample-api",
+      "group": "com.septimalmind.api",
+      "tags": [],
+      "description": "Scala Workshop Sample API",
+      "releaseNotes": "",
+      "publisher": {
+        "name": "7Mind",
+        "id": "com.septimalmind"
+      },
+      "version": {
+        "version": "",
+        "release": false,
+        "snapshotQualifier": ""
+      },
+      "licenses": [
+        {
+          "name": "EULA",
+          "url": {
+            "url": "https://licent.com"
+          }
+        }
+      ],
+      "website": {
+        "url": "https://septimalmind.io"
+      },
+      "copyright": "Copyright (C) Septimalmind IO.",
+      "izumiVersion": "0.7.0"
+    },
+    "layout": "YARN",
+    "yarn": {
+      "projectNaming": {
+        "prefix": [],
+        "dropFQNSegments": 2,
+        "postfix": []
+      },
+      "scope": "@septimalmind",
+      "dependencies": [
+        {
+          "module": "moment",
+          "version": "^2.20.1"
+        },
+        {
+          "module": "@types/node",
+          "version": "^10.7.1"
+        },
+        {
+          "module": "@types/websocket",
+          "version": "0.0.39"
+        }
+      ],
+      "devDependencies": [
+        {
+          "module": "typescript",
+          "version": "3.4.3"
+        }
+      ]
+    }
+  }
+  

@@ -3,9 +3,8 @@ data AccessResponse {
 }
 
 data SignUpRequest {
-    + ProtectedProfile
-    + PublicProfile
-    - role : Role
+    & ProtectedProfile
+    & PublicProfile
 }
 
 service LoginService {
