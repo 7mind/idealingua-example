@@ -25,7 +25,6 @@ object client extends App with RuntimeContext {
       request.withHeaders(header)
     }
   }
-
   val loginClient = new LoginServiceWrappedClient[IO](clientDispatcher)
 
   val a = bio.unsafeRun(loginClient.logout())

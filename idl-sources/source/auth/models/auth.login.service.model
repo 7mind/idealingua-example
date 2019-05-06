@@ -8,7 +8,7 @@ data SignUpRequest {
 }
 
 service LoginService {
-    def login(creds: Credentials)       :     AccessResponse    !! DomainFailure
-    def signUp(request: SignUpRequest)  :     AccessResponse    !! DomainFailure 
-    def logout()                        :     SuccessResponse   !! DomainFailure
+    def login(creds: Credentials)       :  AccessResponse  !! DomainFailure
+    def signUp(request: SignUpRequest)  :  AccessResponse  !! DomainFailure 
+    def logout()                        :  SuccessResponse !! DomainFailure
 }

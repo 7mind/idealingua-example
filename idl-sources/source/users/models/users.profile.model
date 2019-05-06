@@ -1,12 +1,6 @@
-enum Role {
-    Admin
-    Member
-    Unauthorized
-}
-
 id UserId {
     _ : uid
-    company: uid
+    company: long
 }
 
 mixin PublicProfile {
@@ -17,20 +11,17 @@ mixin PublicProfile {
 
 mixin ProtectedProfile {
     password : str
-    role     : Role
 }
 
 data UserData {
     + PublicProfile
     + ProtectedProfile
-    active   : bool
 }
 
 data UserProfile {
     + PublicProfile
     + ProtectedProfile
     id : UserId
-    active   : bool
 }
 
 data CreateUserRequest {

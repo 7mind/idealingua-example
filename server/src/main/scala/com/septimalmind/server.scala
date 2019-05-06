@@ -1,26 +1,23 @@
-import java.util.UUID
-
-import cats.data.OptionT
+import cats.data.{Kleisli, OptionT}
 import cats.effect._
+import com.github.pshirshov.izumi.functional.bio.BIO._
+import com.github.pshirshov.izumi.functional.bio.BIORunner
 import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s._
 import com.github.pshirshov.izumi.idealingua.runtime.rpc.{ContextExtender, IRTClientMultiplexor, IRTServerMultiplexor, _}
+import com.github.pshirshov.izumi.logstage.api.IzLogger
+import com.septimalmind.server.externals.TokenService
+import com.septimalmind.server.idl.RequestContext.{AdminRequest, ClientRequest, GuestRequest}
 import com.septimalmind.server.idl.{NetworkContext, RequestContext}
-import com.septimalmind.server.idl.RequestContext.{AdminRequest, ClientRequest, GuestContext}
+import com.septimalmind.server.persistence.{UserRepo, UserSessionRepo}
 import com.septimalmind.server.services.auth.LoginService
 import com.septimalmind.server.services.users.ProfileService
 import com.septimalmind.services.auth.LoginServiceWrappedServer
 import com.septimalmind.services.companies.CompanyId
 import com.septimalmind.services.users.{UserId, UserProfileServiceWrappedServer}
 import com.septimalmind.shared.RuntimeContext
-import org.http4s.{AuthScheme, Credentials, Request}
-import org.http4s.headers.Authorization
-import scalaz.zio.interop.Task
-import cats.data.Kleisli
-import com.github.pshirshov.izumi.functional.bio.BIO._
-import com.github.pshirshov.izumi.functional.bio.BIORunner
-import com.github.pshirshov.izumi.logstage.api.IzLogger
-import org.http4s.server.{AuthMiddleware, Router}
+import org.http4s.Request
 import org.http4s.server.blaze.BlazeServerBuilder
+import org.http4s.server.{AuthMiddleware, Router}
 import org.http4s.syntax.kleisli._
 import scalaz.zio.IO
 import scalaz.zio.interop.catz._
@@ -29,7 +26,11 @@ import scala.util.Try
 
 object server extends App with RuntimeContext {
 
-  lazy val loginAPI = new LoginServiceWrappedServer[IO, RequestContext](new LoginService[IO])
+  private val tokenService = new TokenService[IO]
+  private val userRepo = new UserRepo[IO]
+  private val sessionRepo = new UserSessionRepo[IO]
+
+  lazy val loginAPI = new LoginServiceWrappedServer[IO, RequestContext](new LoginService[IO](logger, tokenService, userRepo, sessionRepo))
 
   val adminAPI = new UserProfileServiceWrappedServer[IO, AdminRequest](new ProfileService[IO]).contramap[RequestContext] {
     case i: AdminRequest => i
@@ -76,25 +77,12 @@ object server extends App with RuntimeContext {
     val privateScheme = "Api-Key".ci
     request.headers.find(_.name == "Authorization".ci).map(_.value.split(" ").toList match {
       case "Bearer" :: token :: Nil =>
-        parseAsClient(networkContext, token)
+        ClientRequest.fromHeader(token, networkContext)
       case scheme :: token :: Nil if scheme.ci == privateScheme =>
-        parseAsAdmin(networkContext, token)
+        AdminRequest.fromHeader(token, networkContext)
       case _ =>
-        Some(GuestContext(networkContext))
-    }).getOrElse(Some(GuestContext(networkContext)))
-  }
-
-  private def parseAsAdmin(networkContext: NetworkContext, token: String) : Option[AdminRequest] = {
-    token.split("::").toList match {
-      case "secret" :: id :: Nil =>
-        Try(CompanyId.parse(id)).map(AdminRequest(_, networkContext)).toOption
-      case _ =>
-        None
-    }
-  }
-
-  private def parseAsClient(networkContext: NetworkContext, token: String) : Option[ClientRequest] = {
-    Try(UserId.parse(token)).map(ClientRequest(_, networkContext)).toOption
+        Some(GuestRequest(networkContext))
+    }).getOrElse(Some(GuestRequest(networkContext)))
   }
 
   private def setupWsContext(rt: Http4sRuntime[IO, RequestContext, RequestContext, String, Unit, Unit], logger: IzLogger, codec: IRTClientMultiplexor[IO]) = {

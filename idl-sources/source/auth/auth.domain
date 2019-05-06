@@ -5,7 +5,6 @@ import com.septimalmind.services.companies.{
 }
 
 import com.septimalmind.services.users.{
-    Role,
     PublicProfile,
     ProtectedProfile
 }

@@ -21,7 +21,9 @@ libraryDependencies := Seq(
   "com.septimalmind.api"          %% "services-auth-api"             % "0.1.0-SNAPSHOT",
   "com.septimalmind.api"          %% "services-shared-api"           % "0.1.0-SNAPSHOT",
   "com.github.pshirshov.izumi.r2" %% "idealingua-v1-compiler"        % "0.7.0",
-  "com.github.pshirshov.izumi.r2" %% "idealingua-runtime-rpc-http4s" % "0.7.0"
+  "com.github.pshirshov.izumi.r2" %% "idealingua-runtime-rpc-http4s" % "0.7.0",
+  "org.scalactic"                 %% "scalactic"                     % "3.0.5",
+  "org.scalatest"                 %% "scalatest"                     % "3.0.5" % "test"
 ) ++ Seq(
   compilerPlugin("org.spire-math"  %% "kind-projector"     % "0.9.9"),
   compilerPlugin("com.github.ghik" %% "silencer-plugin"    % "1.3.1"),
