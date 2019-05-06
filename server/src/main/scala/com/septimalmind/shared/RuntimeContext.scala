@@ -5,21 +5,30 @@ import java.util.concurrent.{Executors, ThreadPoolExecutor}
 import cats.effect.{Clock, Timer}
 import com.github.pshirshov.izumi.functional.bio.BIORunner.DefaultHandler
 import com.github.pshirshov.izumi.functional.bio.{BIOExit, BIORunner}
+import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s.Http4sRuntime
 import com.github.pshirshov.izumi.logstage.api.IzLogger
+import com.septimalmind.server.idl.RequestContext
 import scalaz.zio.IO
 import scalaz.zio.internal.NamedThreadFactory
+
 import scala.concurrent.duration.FiniteDuration
 import scalaz.zio.interop.catz._
 
 trait RuntimeContext {
 
-  val logger: IzLogger = IzLogger.DebugLogger
+  val printer: io.circe.Printer = io.circe.Printer.spaces2
+
+  lazy val logger: IzLogger = IzLogger.DebugLogger
+
+  implicit lazy val bio: BIORunner[IO] = setupBio(logger)
 
   implicit lazy val timer: Timer[IO[Throwable, ?]] = new Timer[IO[Throwable, ?]] {
     val clock: Clock[IO[Throwable, ?]] = Clock.create[IO[Throwable, ?]]
 
     override def sleep(duration: FiniteDuration): IO[Throwable, Unit] = IO.sleep(scalaz.zio.duration.Duration.fromScala(duration))
   }
+
+  lazy val rt = new Http4sRuntime[IO, RequestContext, RequestContext, String, Unit, Unit](scala.concurrent.ExecutionContext.global)
 
   def setupBio(logger: IzLogger): BIORunner[IO] = {
     val cpuPool: ThreadPoolExecutor = Executors.newFixedThreadPool(8).asInstanceOf[ThreadPoolExecutor]

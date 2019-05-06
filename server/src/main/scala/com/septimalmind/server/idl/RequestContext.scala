@@ -8,7 +8,7 @@ sealed trait RequestContext {
 }
 
 object RequestContext {
-  case class AdminRequest(userId: UserId, networkContext : NetworkContext) extends RequestContext
+  case class AdminRequest(companyId: CompanyId, networkContext: NetworkContext) extends RequestContext
 
   case class ClientRequest(userId: UserId, networkContext : NetworkContext) extends RequestContext
 
