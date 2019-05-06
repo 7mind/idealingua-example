@@ -2,13 +2,25 @@ data AccessResponse {
     accessToken: str
 }
 
+data PendingConfirmation {
+    format: TwoFactorAuthFormat
+    expiresAt: tsz
+}
+
+adt LoginResponse {
+    AccessResponse
+    PendingConfirmation
+} 
+
 data SignUpRequest {
     & ProtectedProfile
     & PublicProfile
+    authFormat: TwoFactorAuthFormat
 }
 
 service LoginService {
-    def login(creds: Credentials)       :  AccessResponse  !! DomainFailure
+    def login(creds: Credentials)       :  LoginResponse   !! DomainFailure
+    def completeLogin(token: str)    :  AccessResponse  !! DomainFailure              
     def signUp(request: SignUpRequest)  :  AccessResponse  !! DomainFailure 
     def logout()                        :  SuccessResponse !! DomainFailure
 }

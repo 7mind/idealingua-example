@@ -12,3 +12,11 @@ adt Credentials {
     PhonePassword
     EmailPassword
 }
+
+
+enum TwoFactorAuthFormat {
+    TOTP
+    Email
+    SMS
+    None
+}
