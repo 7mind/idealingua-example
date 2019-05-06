@@ -1,5 +1,5 @@
 package com.septimalmind.services.companies
 
 id CompanyId {
-    _ : uid
+    _ : long
 }

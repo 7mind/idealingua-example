@@ -6,7 +6,7 @@ echo "start publishing..."
 coursier launch \
     -r https://oss.sonatype.org/content/repositories/snapshots \
     -r https://oss.sonatype.org/content/repositories/releases \
-    ${IZUMI_COMPILER} -- typescript scala -d common.izumiVersion=${IZUMI_VERSION}
+    ${IZUMI_COMPILER} -- scala -d common.izumiVersion=${IZUMI_VERSION}
 
 
 echo '==================================================='
@@ -22,19 +22,3 @@ echo '==================================================='
 cd target/scala
 sbt ";$projectStep clean; update; publishLocal"
 cd ..
-
-echo '==================================================='
-echo '==================================================='
-echo '==================================================='
-echo '==================================================='
-echo '================== TYPESCRIPT ====================='
-echo '==================================================='
-echo '==================================================='
-echo '==================================================='
-echo '==================================================='
-
-cd typescript
-yarn start
-tsc
-
-cd ../..
