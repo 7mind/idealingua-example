@@ -2,13 +2,13 @@
     "version" : "1.1.2",
     "project" : {
         "name" : "server-build",
-        "directory" : "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project",
+        "directory" : "/Users/rtwnk/programming/opensource/idealingua-example/server/project",
         "sources" : [
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/src/main/scala-2.12",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/src/main/scala",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/src/main/java",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/src/main/scala-sbt-1.0",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/target/scala-2.12/sbt-1.0/src_managed/main"
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/project/src/main/scala-2.12",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/project/src/main/scala",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/project/src/main/java",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/project/src/main/scala-sbt-1.0",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/project/target/scala-2.12/sbt-1.0/src_managed/main"
         ],
         "dependencies" : [
         ],
@@ -27,7 +27,10 @@
             "/Users/rtwnk/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar",
             "/Users/rtwnk/.ivy2/cache/org.spire-math/jawn-parser_2.12/jars/jawn-parser_2.12-0.11.1.jar",
             "/Users/rtwnk/.ivy2/cache/io.circe/circe-derivation_2.12/jars/circe-derivation_2.12-0.9.0-M3.jar",
-            "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/org.scalameta/sbt-metals/jars/sbt-metals-0.5.1.jar",
+            "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/org.scalameta/sbt-metals/jars/sbt-metals-0.5.2.jar",
+            "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/org.ensime/sbt-ensime/jars/sbt-ensime-2.5.1.jar",
+            "/Users/rtwnk/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar",
+            "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/com.dwijnand/sbt-compat/jars/sbt-compat-1.0.0.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/sbt/jars/sbt-1.2.8.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/main_2.12/jars/main_2.12-1.2.8.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/logic_2.12/jars/logic_2.12-1.2.8.jar",
@@ -53,7 +56,6 @@
             "/Users/rtwnk/.ivy2/cache/com.lmax/disruptor/jars/disruptor-3.4.2.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/zinc-classpath_2.12/jars/zinc-classpath_2.12-1.2.5.jar",
             "/Users/rtwnk/.sbt/boot/scala-2.12.7/lib/scala-compiler.jar",
-            "/Users/rtwnk/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-1.2.5.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/launcher-interface/jars/launcher-interface-1.0.4.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/task-system_2.12/jars/task-system_2.12-1.2.8.jar",
@@ -108,11 +110,11 @@
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt.ivy/ivy/jars/ivy-2.3.0-sbt-cb9cc189e9f3af519f9f102e6c5d446488ff6832.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-sbt/zinc-compile_2.12/jars/zinc-compile_2.12-1.2.5.jar"
         ],
-        "out" : "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/.bloop/server-build",
-        "classesDir" : "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/.bloop/server-build/scala-2.12/sbt-1.0/classes",
+        "out" : "/Users/rtwnk/programming/opensource/idealingua-example/server/project/.bloop/server-build",
+        "classesDir" : "/Users/rtwnk/programming/opensource/idealingua-example/server/project/.bloop/server-build/scala-2.12/sbt-1.0/classes",
         "resources" : [
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/src/main/resources",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/project/target/scala-2.12/sbt-1.0/resource_managed/main"
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/project/src/main/resources",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/project/target/scala-2.12/sbt-1.0/resource_managed/main"
         ],
         "scala" : {
             "organization" : "org.scala-lang",
@@ -147,8 +149,8 @@
                 "import _root_.scala.xml.{TopScope=>$scope}",
                 "import _root_.sbt._",
                 "import _root_.sbt.Keys._",
-                "import _root_.sbt.ScriptedPlugin.autoImport._, _root_.bloop.integrations.sbt.BloopPlugin.autoImport._",
-                "import _root_.sbt.plugins.IvyPlugin, _root_.sbt.plugins.JvmPlugin, _root_.sbt.plugins.CorePlugin, _root_.sbt.ScriptedPlugin, _root_.sbt.plugins.SbtPlugin, _root_.sbt.plugins.JUnitXmlReportPlugin, _root_.sbt.plugins.Giter8TemplatePlugin, _root_.bloop.integrations.sbt.BloopPlugin, _root_.scala.meta.metals.MetalsPlugin"
+                "import _root_.sbt.ScriptedPlugin.autoImport._, _root_.bloop.integrations.sbt.BloopPlugin.autoImport._, _root_.org.ensime.EnsimeCoursierPlugin.autoImport._, _root_.org.ensime.EnsimeExtrasPlugin.autoImport._, _root_.org.ensime.EnsimePlugin.autoImport._",
+                "import _root_.sbt.plugins.IvyPlugin, _root_.sbt.plugins.JvmPlugin, _root_.sbt.plugins.CorePlugin, _root_.sbt.ScriptedPlugin, _root_.sbt.plugins.SbtPlugin, _root_.sbt.plugins.JUnitXmlReportPlugin, _root_.sbt.plugins.Giter8TemplatePlugin, _root_.bloop.integrations.sbt.BloopPlugin, _root_.scala.meta.metals.MetalsPlugin, _root_.org.ensime.EnsimeCoursierPlugin, _root_.org.ensime.EnsimeExtrasPlugin, _root_.org.ensime.EnsimePlugin"
             ]
         },
         "test" : {
@@ -191,7 +193,7 @@
         "platform" : {
             "name" : "jvm",
             "config" : {
-                "home" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre",
+                "home" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre",
                 "options" : [
                 ]
             },
@@ -357,11 +359,44 @@
                 {
                     "organization" : "org.scalameta",
                     "name" : "sbt-metals",
-                    "version" : "0.5.1",
+                    "version" : "0.5.2",
                     "artifacts" : [
                         {
                             "name" : "sbt-metals",
-                            "path" : "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/org.scalameta/sbt-metals/jars/sbt-metals-0.5.1.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/org.scalameta/sbt-metals/jars/sbt-metals-0.5.2.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.ensime",
+                    "name" : "sbt-ensime",
+                    "version" : "2.5.1",
+                    "artifacts" : [
+                        {
+                            "name" : "sbt-ensime",
+                            "path" : "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/org.ensime/sbt-ensime/jars/sbt-ensime-2.5.1.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scala-lang.modules",
+                    "name" : "scala-xml_2.12",
+                    "version" : "1.0.6",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-xml_2.12",
+                            "path" : "/Users/rtwnk/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "com.dwijnand",
+                    "name" : "sbt-compat",
+                    "version" : "1.0.0",
+                    "artifacts" : [
+                        {
+                            "name" : "sbt-compat",
+                            "path" : "/Users/rtwnk/.ivy2/cache/scala_2.12/sbt_1.0/com.dwijnand/sbt-compat/jars/sbt-compat-1.0.0.jar"
                         }
                     ]
                 },
@@ -637,17 +672,6 @@
                         {
                             "name" : "scala-compiler",
                             "path" : "/Users/rtwnk/.sbt/boot/scala-2.12.7/lib/scala-compiler.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization" : "org.scala-lang.modules",
-                    "name" : "scala-xml_2.12",
-                    "version" : "1.0.6",
-                    "artifacts" : [
-                        {
-                            "name" : "scala-xml_2.12",
-                            "path" : "/Users/rtwnk/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar"
                         }
                     ]
                 },

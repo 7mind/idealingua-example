@@ -31,7 +31,7 @@ class LoginService[F[+ _, + _] : BIO]
   (
     ctx: RequestContext,
     creds: Credentials
-  ): F[DomainFailure, AccessResponse] = {
+  ): F[DomainFailure, LoginResponse] = {
 
     logger.info(s"start processing ${creds -> "tokens"}")
 
@@ -43,7 +43,7 @@ class LoginService[F[+ _, + _] : BIO]
         } yield AccessResponse(token)
       case Credentials.PhonePassword(_) =>
         //TODO: implement
-        ???
+        throw new IllegalArgumentException("Not implemented")
     }
   }
 
@@ -62,6 +62,10 @@ class LoginService[F[+ _, + _] : BIO]
       case _ =>
         fail(DomainFailure(DomainFailureCode.AccessDenied, Some("method allowed only for administrators")))
     }
+  }
+
+  def completeLogin(ctx: RequestContext, token: String): F[DomainFailure, AccessResponse] = {
+    ???
   }
 
   override def logout
