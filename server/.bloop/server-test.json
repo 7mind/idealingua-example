@@ -213,27 +213,27 @@
                             "name" : "services-users-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "3a14368dfda17ea88f29fe753cea9a37506aad09"
+                                "digest" : "18fa9a5c40a6a8e7ec6afc71a56456ee56198c01"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/jars/services-users-api_2.12.jar"
-                        },
-                        {
-                            "name" : "services-users-api_2.12",
-                            "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "c736678e895750b1c31be7d5aebf2bd7c7c5e3ab"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/srcs/services-users-api_2.12-sources.jar"
                         },
                         {
                             "name" : "services-users-api_2.12",
                             "classifier" : "javadoc",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "8bbf00810518a7d03e5cb0bd95cf02b85b0478f7"
+                                "digest" : "d09d9366dd7f2e1dea330b2579149f21f2d94792"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/docs/services-users-api_2.12-javadoc.jar"
+                        },
+                        {
+                            "name" : "services-users-api_2.12",
+                            "classifier" : "sources",
+                            "checksum" : {
+                                "type" : "sha1",
+                                "digest" : "6acefa86863777b08df8fad9997ec4b782e1c782"
+                            },
+                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/srcs/services-users-api_2.12-sources.jar"
                         }
                     ]
                 },
@@ -262,27 +262,27 @@
                             "name" : "services-companies-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "c3a92fa722d4b0d509557a73c806a1c4e7bcf205"
+                                "digest" : "35ac6da95f7e47a1fef67cf7276f23c059168333"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/jars/services-companies-api_2.12.jar"
-                        },
-                        {
-                            "name" : "services-companies-api_2.12",
-                            "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "ea1ce2342a32467b3bade9c5b3bb1a6f8e89b393"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/srcs/services-companies-api_2.12-sources.jar"
                         },
                         {
                             "name" : "services-companies-api_2.12",
                             "classifier" : "javadoc",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "2d156ce273169caa9be63496d268417700a723cf"
+                                "digest" : "cc463f856be33dbd0b5e4f054b9a4bc018a6265a"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/docs/services-companies-api_2.12-javadoc.jar"
+                        },
+                        {
+                            "name" : "services-companies-api_2.12",
+                            "classifier" : "sources",
+                            "checksum" : {
+                                "type" : "sha1",
+                                "digest" : "23a601ed61a217043c62cbafb15a83d2d7154332"
+                            },
+                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/srcs/services-companies-api_2.12-sources.jar"
                         }
                     ]
                 },
@@ -743,7 +743,7 @@
                             "name" : "services-shared-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "c66edbdc424d9b80726874ca86efa92dc59fab42"
+                                "digest" : "9bc5ff65847f0387b42813584706a7fb6b6610c0"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-shared-api_2.12/0.1.0-SNAPSHOT/jars/services-shared-api_2.12.jar"
                         },
@@ -752,7 +752,7 @@
                             "classifier" : "javadoc",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "993a8e1541d8b4e61f02632e7c57ae9d823fe18e"
+                                "digest" : "29fe3df84e090507f78187363863526d69fbf77a"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-shared-api_2.12/0.1.0-SNAPSHOT/docs/services-shared-api_2.12-javadoc.jar"
                         },
@@ -761,7 +761,7 @@
                             "classifier" : "sources",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "d83db9f59baedc029bac8bea49f81d4a4902b11a"
+                                "digest" : "d9416beed10aaa4d5aab427ca05685d892c9b7ae"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-shared-api_2.12/0.1.0-SNAPSHOT/srcs/services-shared-api_2.12-sources.jar"
                         }
@@ -776,27 +776,27 @@
                             "name" : "services-auth-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "680965f6446eb7189a568b1f291c25e31e170042"
+                                "digest" : "c3bae46292ad949f24cb01b1a3ae15792f828090"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/jars/services-auth-api_2.12.jar"
-                        },
-                        {
-                            "name" : "services-auth-api_2.12",
-                            "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "b3934b6cea87d1c1938f9d5e90bfd28a72d9c79d"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/srcs/services-auth-api_2.12-sources.jar"
                         },
                         {
                             "name" : "services-auth-api_2.12",
                             "classifier" : "javadoc",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "53546bc92b89df384c4f304157b5d2339d0b57db"
+                                "digest" : "24f6ebf24c782f45c663705a9eaaf2ece1cb28e5"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/docs/services-auth-api_2.12-javadoc.jar"
+                        },
+                        {
+                            "name" : "services-auth-api_2.12",
+                            "classifier" : "sources",
+                            "checksum" : {
+                                "type" : "sha1",
+                                "digest" : "e938b7c25ac9a0bad2d24a3c2cc94a71003f8226"
+                            },
+                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/srcs/services-auth-api_2.12-sources.jar"
                         }
                     ]
                 },

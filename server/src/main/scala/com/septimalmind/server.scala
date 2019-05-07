@@ -1,4 +1,4 @@
-import cats.data.{ Kleisli, OptionT }
+import cats.data.{Kleisli, OptionT}
 import cats.effect._
 import com.github.pshirshov.izumi.functional.bio.BIO._
 import com.github.pshirshov.izumi.functional.bio.BIORunner
@@ -6,24 +6,25 @@ import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s._
 import com.github.pshirshov.izumi.idealingua.runtime.rpc._
 import com.github.pshirshov.izumi.logstage.api.IzLogger
 import com.septimalmind.server.externals.TokenService
-import com.septimalmind.server.idl.RequestContext.{ AdminRequest, ClientRequest, GuestRequest }
-import com.septimalmind.server.idl.{ NetworkContext, RequestContext }
-import com.septimalmind.server.persistence.{ UserRepo, UserSessionRepo }
-import com.septimalmind.server.services.auth.LoginService
+import com.septimalmind.server.idl.RequestContext.{AdminRequest, ClientRequest, GuestRequest}
+import com.septimalmind.server.idl.{NetworkContext, RequestContext}
+import com.septimalmind.server.persistence.{UserRepo, UserSessionRepo}
+import com.septimalmind.server.services.auth.{LoginService, PendingConfirmationRepo}
 import com.septimalmind.server.services.users.ProfileService
 import com.septimalmind.services.auth.LoginServiceWrappedServer
 import com.septimalmind.services.companies.CompanyId
-import com.septimalmind.services.users.{ UserId, UserProfileServiceWrappedServer }
+import com.septimalmind.services.users.{UserId, UserProfileServiceWrappedServer}
 import com.septimalmind.shared.RuntimeContext
 import org.http4s.Request
 import org.http4s.server.blaze.BlazeServerBuilder
-import org.http4s.server.{ AuthMiddleware, Router }
+import org.http4s.server.{AuthMiddleware, Router}
 import org.http4s.syntax.kleisli._
 import scalaz.zio.IO
 import scalaz.zio.interop.catz._
 import cats.effect._
 import org.http4s._
 import org.http4s.dsl.io._
+
 import scala.util.Try
 
 object server extends App with RuntimeContext {
@@ -31,9 +32,10 @@ object server extends App with RuntimeContext {
   private val tokenService = new TokenService[IO]
   private val userRepo     = new UserRepo[IO]
   private val sessionRepo  = new UserSessionRepo[IO]
+  private val pendingRepo  = new PendingConfirmationRepo[IO]
 
   lazy val loginAPI =
-    new LoginServiceWrappedServer[IO, RequestContext](new LoginService[IO](logger, tokenService, userRepo, sessionRepo))
+    new LoginServiceWrappedServer[IO, RequestContext](new LoginService[IO](logger, tokenService, userRepo, sessionRepo, pendingRepo))
 
   val adminAPI =
     new UserProfileServiceWrappedServer[IO, AdminRequest](new ProfileService[IO]).contramap[RequestContext] {

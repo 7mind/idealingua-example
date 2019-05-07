@@ -20,8 +20,8 @@ data SignUpRequest {
 }
 
 service LoginService {
-    def login(creds: Credentials)       :  LoginResponse   !! DomainFailure
-    def completeLogin(token: str)       :  AccessResponse  !! DomainFailure              
-    def signUp(request: SignUpRequest)  :  AccessResponse  !! DomainFailure 
-    def logout()                        :  SuccessResponse !! DomainFailure
+    def login(creds: Credentials)                 :  LoginResponse   !! DomainFailure
+    def completeLogin(acuireId: uid, token: str)  :  AccessResponse  !! DomainFailure              
+    def signUp(request: SignUpRequest)            :  AccessResponse  !! DomainFailure 
+    def logout()                                  :  SuccessResponse !! DomainFailure
 }

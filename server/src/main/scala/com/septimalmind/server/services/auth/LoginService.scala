@@ -4,22 +4,27 @@ import java.util.UUID
 
 import com.github.pshirshov.izumi.functional.bio.BIO
 import com.github.pshirshov.izumi.functional.bio.BIO._
+import com.github.pshirshov.izumi.fundamentals.platform.language.Quirks
+import com.github.pshirshov.izumi.fundamentals.platform.time.IzTime
 import com.github.pshirshov.izumi.logstage.api.IzLogger
 import com.septimalmind.server.externals.TokenService
 import com.septimalmind.server.idl.RequestContext
-import com.septimalmind.server.idl.RequestContext.{ AdminRequest, ClientRequest }
-import com.septimalmind.server.persistence.{ UserRepo, UserSessionRepo }
-import com.septimalmind.services.auth._
+import com.septimalmind.server.idl.RequestContext.{AdminRequest, ClientRequest}
+import com.septimalmind.server.persistence.{UserRepo, UserSessionRepo}
+import com.septimalmind.services.auth.TwoFactorAuthFormat.{Email, SMS, TOTP}
+import com.septimalmind.services.auth.{LoginResponse, _}
 import com.septimalmind.services.shared._
 import com.septimalmind.services.users._
 
 import scala.language.higherKinds
+import scala.util.Random
 
 class LoginService[F[+ _, + _]: BIO](
   logger: IzLogger,
   tokenService: TokenService[F],
   userRepo: UserRepo[F],
-  sessionRepo: UserSessionRepo[F]
+  sessionRepo: UserSessionRepo[F],
+  pendingConfirmation: PendingConfirmationRepo[F]
 ) extends LoginServiceServer[F, RequestContext] {
 
   private val bio: BIO[F] = implicitly
@@ -45,7 +50,6 @@ class LoginService[F[+ _, + _]: BIO](
       _      <- userRepo.checkPw(id, pw)
       format <- userRepo.retrieveUserAuthFormat(id)
       out <- {
-        import LoginResponse._
         format match {
           case TwoFactorAuthFormat.None =>
             generateToken(id, ip).map(LoginResponse.intoAccessResponse)
@@ -73,11 +77,16 @@ class LoginService[F[+ _, + _]: BIO](
         fail(DomainFailure(DomainFailureCode.AccessDenied, Some("method allowed only for administrators")))
     }
 
-  def completeLogin(ctx: RequestContext, token: String): F[DomainFailure, AccessResponse] = {
-    ???
+  def completeLogin(ctx: RequestContext, acuireId: UUID, token: String): F[DomainFailure, AccessResponse] = {
+    for {
+      (userId, expectedToken) <- pendingConfirmation.fetch(acuireId)
+      _   = logger.info("")
+      _  <- when(expectedToken == token)(fail(DomainFailure(DomainFailureCode.AssertionFailed, Some("wrong token"))))
+      _  <- pendingConfirmation.release(acuireId)
+      token <- generateToken(userId, ctx.networkContext.ip)
+    } yield AccessResponse(token)
   }
     
-
   override def logout(
     ctx: RequestContext
   ): F[DomainFailure, SuccessResponse] =
@@ -95,7 +104,31 @@ class LoginService[F[+ _, + _]: BIO](
     userId: UserId,
     format: TwoFactorAuthFormat,
     ip: String
-  ): F[DomainFailure, PendingConfirmation] = ???
+  ): F[DomainFailure, PendingConfirmation] = {
+    val token = (Random.nextInt(999999) + 100000).toString
+    for {
+      _ <- (format : @unchecked) match {
+        case SMS => viaSms(userId, token)
+        case Email => viaEmail(userId, token)
+        case TOTP => viaGoogle(userId, token)
+      }
+      lockId <- pendingConfirmation.acquire(userId, token)
+    } yield PendingConfirmation(format, lockId, IzTime.utcNow.plusMinutes(30L))
+  }
+
+  private def viaGoogle(userId: UserId, token: String) : F[DomainFailure, Unit] = {
+    Quirks.discard(userId, token)
+    unit
+  }
+  private def viaSms(userId: UserId, token: String) : F[DomainFailure, Unit] = {
+    Quirks.discard(userId, token)
+    unit
+  }
+  private def viaEmail(userId: UserId, token: String) : F[DomainFailure, Unit] = {
+    Quirks.discard(userId, token)
+    unit
+  }
+
 
   protected def generateToken(userId: UserId, ip: String): F[DomainFailure, AccessResponse] =
     for {

@@ -6,7 +6,7 @@ import com.septimalmind.server.externals.TokenService
 import com.septimalmind.server.idl.RequestContext.{AdminRequest, ClientRequest, GuestRequest}
 import com.septimalmind.server.idl.{NetworkContext, RequestContext}
 import com.septimalmind.server.persistence.{UserRepo, UserSessionRepo}
-import com.septimalmind.server.services.auth.LoginService
+import com.septimalmind.server.services.auth.{LoginService, PendingConfirmationRepo}
 import com.septimalmind.services.auth.LoginServiceServer
 import com.septimalmind.services.companies.CompanyId
 import com.septimalmind.services.shared.DomainFailure
@@ -26,9 +26,12 @@ class LoginRequestSpec extends WordSpec with RuntimeContext {
   val tokenService: TokenService[IO] = new TokenService[IO]
 
   private val userRepo = new UserRepo[IO]
+
   private val sessionRepo = new UserSessionRepo[IO]
 
-  val loginService: LoginServiceServer[IO, RequestContext] = new LoginService[IO](logger, tokenService, userRepo, sessionRepo)
+  private val pendingConfirmRepo = new PendingConfirmationRepo[IO]
+
+  val loginService: LoginServiceServer[IO, RequestContext] = new LoginService[IO](logger, tokenService, userRepo, sessionRepo, pendingConfirmRepo)
 
   private def scopeIO[T](t : IO[DomainFailure, Unit])(implicit bio: BIORunner[IO]) : Unit = {
     val eff = t.leftMap(failure => fail(s"Got failure. ${failure.code.getClass.getName} ${failure.msg.getOrElse("")}"))
