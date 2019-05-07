@@ -4,6 +4,7 @@ data AccessResponse {
 
 data PendingConfirmation {
     format: TwoFactorAuthFormat
+    acquireId: uid
     expiresAt: tsz
 }
 
