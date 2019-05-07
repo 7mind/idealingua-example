@@ -2,28 +2,28 @@
     "version" : "1.1.2",
     "project" : {
         "name" : "server-test",
-        "directory" : "/Users/rtwnk/programming/own/opensource/idealingua-example/server",
+        "directory" : "/Users/rtwnk/programming/opensource/idealingua-example/server",
         "sources" : [
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/src/test/scala-2.12",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/src/test/scala",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/src/test/java",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/target/scala-2.12/src_managed/test"
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/src/test/scala-2.12",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/src/test/scala",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/src/test/java",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/target/scala-2.12/src_managed/test"
         ],
         "dependencies" : [
             "server"
         ],
         "classpath" : [
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/.bloop/server/scala-2.12/classes",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/.bloop/server/scala-2.12/classes",
             "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/jars/services-users-api_2.12.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.8.jar",
             "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/jars/services-companies-api_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-scala_2.12/0.7.0/jars/idealingua-runtime-rpc-scala_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-collections_2.12/0.7.0/jars/fundamentals-collections_2.12.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-scala_2.12/jars/idealingua-runtime-rpc-scala_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-collections_2.12/jars/fundamentals-collections_2.12-0.7.0.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-lang.modules/scala-collection-compat_2.12/bundles/scala-collection-compat_2.12-0.3.0.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-platform_2.12/0.7.0/jars/fundamentals-platform_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-functional_2.12/0.7.0/jars/fundamentals-functional_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-bio_2.12/0.7.0/jars/fundamentals-bio_2.12.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-platform_2.12/jars/fundamentals-platform_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-functional_2.12/jars/fundamentals-functional_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-bio_2.12/jars/fundamentals-bio_2.12-0.7.0.jar",
             "/Users/rtwnk/.ivy2/cache/io.circe/circe-core_2.12/jars/circe-core_2.12-0.11.1.jar",
             "/Users/rtwnk/.ivy2/cache/io.circe/circe-numbers_2.12/jars/circe-numbers_2.12-0.11.1.jar",
             "/Users/rtwnk/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.6.0.jar",
@@ -44,15 +44,15 @@
             "/Users/rtwnk/.ivy2/cache/org.scalaz/scalaz-zio-interop-cats_2.12/jars/scalaz-zio-interop-cats_2.12-0.6.3.jar",
             "/Users/rtwnk/.ivy2/cache/org.scalaz/scalaz-zio-interop-shared_2.12/jars/scalaz-zio-interop-shared_2.12-0.6.3.jar",
             "/Users/rtwnk/.ivy2/cache/org.typelevel/cats-effect_2.12/jars/cats-effect_2.12-1.2.0.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-model_2.12/0.7.0/jars/idealingua-model_2.12.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-model_2.12/jars/idealingua-model_2.12-0.7.0.jar",
             "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-shared-api_2.12/0.1.0-SNAPSHOT/jars/services-shared-api_2.12.jar",
             "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/jars/services-auth-api_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-compiler_2.12/0.7.0/jars/idealingua-v1-compiler_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-transpilers_2.12/0.7.0/jars/idealingua-v1-transpilers_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-core_2.12/0.7.0/jars/idealingua-v1-core_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-model_2.12/0.7.0/jars/idealingua-v1-model_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fastparse-shaded_2.12/0.7.0/jars/fastparse-shaded_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-scala_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-scala_2.12.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-compiler_2.12/jars/idealingua-v1-compiler_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-transpilers_2.12/jars/idealingua-v1-transpilers_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-core_2.12/jars/idealingua-v1-core_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-model_2.12/jars/idealingua-v1-model_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fastparse-shaded_2.12/jars/fastparse-shaded_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-scala_2.12/jars/idealingua-v1-runtime-rpc-scala_2.12-0.7.0.jar",
             "/Users/rtwnk/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.1.1.jar",
             "/Users/rtwnk/.ivy2/cache/org.scalameta/scalameta_2.12/jars/scalameta_2.12-4.1.4.jar",
             "/Users/rtwnk/.ivy2/cache/org.scalameta/common_2.12/jars/common_2.12-4.1.4.jar",
@@ -74,17 +74,17 @@
             "/Users/rtwnk/.ivy2/cache/org.scalameta/trees_2.12/jars/trees_2.12-4.1.4.jar",
             "/Users/rtwnk/.ivy2/cache/org.scalameta/quasiquotes_2.12/jars/quasiquotes_2.12-4.1.4.jar",
             "/Users/rtwnk/.ivy2/cache/org.scalameta/transversers_2.12/jars/transversers_2.12-4.1.4.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-typescript_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-typescript_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-go_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-go_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-c-sharp_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-c-sharp_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-test-defs_2.12/0.7.0/jars/idealingua-v1-test-defs_2.12.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-typescript_2.12/jars/idealingua-v1-runtime-rpc-typescript_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-go_2.12/jars/idealingua-v1-runtime-rpc-go_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-c-sharp_2.12/jars/idealingua-v1-runtime-rpc-c-sharp_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-test-defs_2.12/jars/idealingua-v1-test-defs_2.12-0.7.0.jar",
             "/Users/rtwnk/.ivy2/cache/com.github.scopt/scopt_2.12/jars/scopt_2.12-3.7.1.jar",
             "/Users/rtwnk/.ivy2/cache/com.typesafe/config/bundles/config-1.3.3.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-http4s_2.12/0.7.0/jars/idealingua-runtime-rpc-http4s_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-core_2.12/0.7.0/jars/logstage-core_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-api_2.12/0.7.0/jars/logstage-api_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-reflection_2.12/0.7.0/jars/fundamentals-reflection_2.12.jar",
-            "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-adapter-slf4j_2.12/0.7.0/jars/logstage-adapter-slf4j_2.12.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-http4s_2.12/jars/idealingua-runtime-rpc-http4s_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-core_2.12/jars/logstage-core_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-api_2.12/jars/logstage-api_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-reflection_2.12/jars/fundamentals-reflection_2.12-0.7.0.jar",
+            "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-adapter-slf4j_2.12/jars/logstage-adapter-slf4j_2.12-0.7.0.jar",
             "/Users/rtwnk/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar",
             "/Users/rtwnk/.ivy2/cache/org.http4s/http4s-dsl_2.12/jars/http4s-dsl_2.12-0.20.0-M5.jar",
             "/Users/rtwnk/.ivy2/cache/org.http4s/http4s-core_2.12/jars/http4s-core_2.12-0.20.0-M5.jar",
@@ -109,13 +109,15 @@
             "/Users/rtwnk/.ivy2/cache/javax.xml.bind/jaxb-api/jars/jaxb-api-2.3.0.jar",
             "/Users/rtwnk/.ivy2/cache/com.sun.xml.bind/jaxb-core/jars/jaxb-core-2.3.0.1.jar",
             "/Users/rtwnk/.ivy2/cache/com.sun.xml.bind/jaxb-impl/jars/jaxb-impl-2.3.0.1.jar",
-            "/Users/rtwnk/.ivy2/cache/javax.activation/activation/jars/activation-1.1.1.jar"
+            "/Users/rtwnk/.ivy2/cache/javax.activation/activation/jars/activation-1.1.1.jar",
+            "/Users/rtwnk/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.5.jar",
+            "/Users/rtwnk/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.5.jar"
         ],
-        "out" : "/Users/rtwnk/programming/own/opensource/idealingua-example/server/.bloop/server",
-        "classesDir" : "/Users/rtwnk/programming/own/opensource/idealingua-example/server/.bloop/server/scala-2.12/test-classes",
+        "out" : "/Users/rtwnk/programming/opensource/idealingua-example/server/.bloop/server",
+        "classesDir" : "/Users/rtwnk/programming/opensource/idealingua-example/server/.bloop/server/scala-2.12/test-classes",
         "resources" : [
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/src/test/resources",
-            "/Users/rtwnk/programming/own/opensource/idealingua-example/server/target/scala-2.12/resource_managed/test"
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/src/test/resources",
+            "/Users/rtwnk/programming/opensource/idealingua-example/server/target/scala-2.12/resource_managed/test"
         ],
         "scala" : {
             "organization" : "org.scala-lang",
@@ -125,9 +127,12 @@
                 "-Ypartial-unification",
                 "-P:semanticdb:synthetics:on",
                 "-P:semanticdb:failures:warning",
-                "-P:semanticdb:sourceroot:/Users/rtwnk/programming/own/opensource/idealingua-example/server",
+                "-P:semanticdb:sourceroot:/Users/rtwnk/programming/opensource/idealingua-example/server",
                 "-Yrangepos",
                 "-Xplugin-require:semanticdb",
+                "-Xplugin:/Users/rtwnk/.ivy2/cache/org.spire-math/kind-projector_2.12/jars/kind-projector_2.12-0.9.9.jar",
+                "-Xplugin:/Users/rtwnk/.ivy2/cache/com.github.ghik/silencer-plugin_2.12/jars/silencer-plugin_2.12-1.3.1.jar",
+                "-Xplugin:/Users/rtwnk/.ivy2/cache/com.olegpy/better-monadic-for_2.12/jars/better-monadic-for_2.12-0.3.0-M4.jar",
                 "-Xplugin:/Users/rtwnk/.ivy2/cache/org.scalameta/semanticdb-scalac_2.12.8/jars/semanticdb-scalac_2.12.8-4.1.9.jar"
             ],
             "jars" : [
@@ -190,7 +195,7 @@
         "platform" : {
             "name" : "jvm",
             "config" : {
-                "home" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre",
+                "home" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre",
                 "options" : [
                 ]
             },
@@ -208,27 +213,27 @@
                             "name" : "services-users-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "263a0b5b23188cbf3b1f1a5c0f67a17d1db32352"
+                                "digest" : "f42e039a771e6c51c72140f21749e24f129422e6"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/jars/services-users-api_2.12.jar"
-                        },
-                        {
-                            "name" : "services-users-api_2.12",
-                            "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "fba911e15341e1b82ac4a308c6b4c5d4bb3d2a3c"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/srcs/services-users-api_2.12-sources.jar"
                         },
                         {
                             "name" : "services-users-api_2.12",
                             "classifier" : "javadoc",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "de3ee59838c43eef91b22f06d042cc3f11ee99d7"
+                                "digest" : "a46838bf0eb14e80c936d32e76f76d435ced83eb"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/docs/services-users-api_2.12-javadoc.jar"
+                        },
+                        {
+                            "name" : "services-users-api_2.12",
+                            "classifier" : "sources",
+                            "checksum" : {
+                                "type" : "sha1",
+                                "digest" : "7be345e6dbb6d16fb8dc01de8b633180a2b33b54"
+                            },
+                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-users-api_2.12/0.1.0-SNAPSHOT/srcs/services-users-api_2.12-sources.jar"
                         }
                     ]
                 },
@@ -257,27 +262,27 @@
                             "name" : "services-companies-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "eca17987267bc6415079e71e4bb4d82da6e988b5"
+                                "digest" : "164524a24165fd12d3b041134f04ae8919d1fd5c"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/jars/services-companies-api_2.12.jar"
-                        },
-                        {
-                            "name" : "services-companies-api_2.12",
-                            "classifier" : "javadoc",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "77d2ad5d255191875877d1494965a0281e729b04"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/docs/services-companies-api_2.12-javadoc.jar"
                         },
                         {
                             "name" : "services-companies-api_2.12",
                             "classifier" : "sources",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "731b368c5843d3e834150ef1589a1861bcf53fc1"
+                                "digest" : "bba40d78360794ffa589f1fdaa9f54b4e01daee2"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/srcs/services-companies-api_2.12-sources.jar"
+                        },
+                        {
+                            "name" : "services-companies-api_2.12",
+                            "classifier" : "javadoc",
+                            "checksum" : {
+                                "type" : "sha1",
+                                "digest" : "ef64afe42b4ba32a58497319ba8b4532548122dc"
+                            },
+                            "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-companies-api_2.12/0.1.0-SNAPSHOT/docs/services-companies-api_2.12-javadoc.jar"
                         }
                     ]
                 },
@@ -288,20 +293,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-runtime-rpc-scala_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "db226b5d6d1e7a763bc8a91a33dbb5080dd8befd"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-scala_2.12/0.7.0/jars/idealingua-runtime-rpc-scala_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-scala_2.12/jars/idealingua-runtime-rpc-scala_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-runtime-rpc-scala_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "e5eb2059ef1d7eca57bf1f182680e83c5de7634f"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-scala_2.12/0.7.0/srcs/idealingua-runtime-rpc-scala_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-scala_2.12/srcs/idealingua-runtime-rpc-scala_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -312,20 +309,12 @@
                     "artifacts" : [
                         {
                             "name" : "fundamentals-collections_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "7e1161bac7f97e147d5e21a3d27398f0d0d35ad1"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-collections_2.12/0.7.0/jars/fundamentals-collections_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-collections_2.12/jars/fundamentals-collections_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "fundamentals-collections_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "c6d6a40ed55216e61aa4b5c513f739aff1506df2"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-collections_2.12/0.7.0/srcs/fundamentals-collections_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-collections_2.12/srcs/fundamentals-collections_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -368,20 +357,12 @@
                     "artifacts" : [
                         {
                             "name" : "fundamentals-platform_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "89b255e26f27b6ccd74e86349f138d365db32a2e"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-platform_2.12/0.7.0/jars/fundamentals-platform_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-platform_2.12/jars/fundamentals-platform_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "fundamentals-platform_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "820943db3acbbc37ad5343bbacf76ebd032a7b2b"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-platform_2.12/0.7.0/srcs/fundamentals-platform_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-platform_2.12/srcs/fundamentals-platform_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -392,20 +373,12 @@
                     "artifacts" : [
                         {
                             "name" : "fundamentals-functional_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "5df2936cfde05e15de782dd16ef0afa19a27f5d4"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-functional_2.12/0.7.0/jars/fundamentals-functional_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-functional_2.12/jars/fundamentals-functional_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "fundamentals-functional_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "890e35474662a3872dfc181ca05784b53067b2b9"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-functional_2.12/0.7.0/srcs/fundamentals-functional_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-functional_2.12/srcs/fundamentals-functional_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -416,20 +389,12 @@
                     "artifacts" : [
                         {
                             "name" : "fundamentals-bio_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "1d89ea0fe0f9586bd454c5e211446831d7ee1722"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-bio_2.12/0.7.0/jars/fundamentals-bio_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-bio_2.12/jars/fundamentals-bio_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "fundamentals-bio_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "1aa27dd3d534c5ffaa74e3e8da32ce81966fa2f8"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-bio_2.12/0.7.0/srcs/fundamentals-bio_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-bio_2.12/srcs/fundamentals-bio_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -760,20 +725,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-model_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "103efd531232d42ce57041ff917e0302f2355f56"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-model_2.12/0.7.0/jars/idealingua-model_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-model_2.12/jars/idealingua-model_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-model_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "2189e60f55c37e72b1710b52743ebc82e25355de"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-model_2.12/0.7.0/srcs/idealingua-model_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-model_2.12/srcs/idealingua-model_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -786,7 +743,7 @@
                             "name" : "services-shared-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "f329d02efb2f8f0b858044b67b242fe0e54501bc"
+                                "digest" : "69f1c79e6f04b8a67f151331d44a26e6ac943560"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-shared-api_2.12/0.1.0-SNAPSHOT/jars/services-shared-api_2.12.jar"
                         },
@@ -795,7 +752,7 @@
                             "classifier" : "javadoc",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "f4d79b4e63417c891d342d289a39ec3c28bf350c"
+                                "digest" : "000e4fdf26171a50ef8a0e3f8adb4935d23c05f5"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-shared-api_2.12/0.1.0-SNAPSHOT/docs/services-shared-api_2.12-javadoc.jar"
                         },
@@ -804,7 +761,7 @@
                             "classifier" : "sources",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "475ead400ce95fe56d85f6bc8f0362cba39c8069"
+                                "digest" : "7c27da482ce5adb3b923a6e98ceb7d66aa0fed41"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-shared-api_2.12/0.1.0-SNAPSHOT/srcs/services-shared-api_2.12-sources.jar"
                         }
@@ -819,7 +776,7 @@
                             "name" : "services-auth-api_2.12",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "dd7230c05cd859e4c0a3e61155c9cb27e18b754d"
+                                "digest" : "d2693638496323e25f3e1f29f3dc868bb7b42442"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/jars/services-auth-api_2.12.jar"
                         },
@@ -828,7 +785,7 @@
                             "classifier" : "javadoc",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "27aa31be7a02bb685f836eb40f1bb50df85252cf"
+                                "digest" : "035dfc5f02efb72f9864141a5d5c6dbdfb17452e"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/docs/services-auth-api_2.12-javadoc.jar"
                         },
@@ -837,7 +794,7 @@
                             "classifier" : "sources",
                             "checksum" : {
                                 "type" : "sha1",
-                                "digest" : "cf449b2acb61327a9e69202e7c5160388b2af431"
+                                "digest" : "514b955a85e0fefd43e9e38296adf7db26fbfc22"
                             },
                             "path" : "/Users/rtwnk/.ivy2/local/com.septimalmind.api/services-auth-api_2.12/0.1.0-SNAPSHOT/srcs/services-auth-api_2.12-sources.jar"
                         }
@@ -850,20 +807,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-compiler_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "d79a6214ac4062c1df593ab9dada91530704f743"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-compiler_2.12/0.7.0/jars/idealingua-v1-compiler_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-compiler_2.12/jars/idealingua-v1-compiler_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-compiler_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "f12720cb7210100da136ef4b98d3de37d2405dc1"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-compiler_2.12/0.7.0/srcs/idealingua-v1-compiler_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-compiler_2.12/srcs/idealingua-v1-compiler_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -874,20 +823,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-transpilers_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "5724055fd7cd3e848804fb4e77b9d674743a347a"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-transpilers_2.12/0.7.0/jars/idealingua-v1-transpilers_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-transpilers_2.12/jars/idealingua-v1-transpilers_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-transpilers_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "49589ad26d2419ae199817230a3569e04d083e59"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-transpilers_2.12/0.7.0/srcs/idealingua-v1-transpilers_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-transpilers_2.12/srcs/idealingua-v1-transpilers_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -898,20 +839,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-core_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "97b61deaa2071e75dce50a7a46cc0a00ceb0e570"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-core_2.12/0.7.0/jars/idealingua-v1-core_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-core_2.12/jars/idealingua-v1-core_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-core_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "b7d94b31ec6134362d301a6a60b1dc3ef194a136"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-core_2.12/0.7.0/srcs/idealingua-v1-core_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-core_2.12/srcs/idealingua-v1-core_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -922,20 +855,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-model_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "2a7d693f3416acc0ebfdcaf88656b03d7f1ac4d4"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-model_2.12/0.7.0/jars/idealingua-v1-model_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-model_2.12/jars/idealingua-v1-model_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-model_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "1ff4bdac9e755c979ae33bb489f075fd0c34697f"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-model_2.12/0.7.0/srcs/idealingua-v1-model_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-model_2.12/srcs/idealingua-v1-model_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -946,20 +871,12 @@
                     "artifacts" : [
                         {
                             "name" : "fastparse-shaded_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "fdeacefa241425b958ab7b9eb73bc8998f3510b0"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fastparse-shaded_2.12/0.7.0/jars/fastparse-shaded_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fastparse-shaded_2.12/jars/fastparse-shaded_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "fastparse-shaded_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "799ba6ba2dbf3ae5986242ba91c1b54d13b463b6"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fastparse-shaded_2.12/0.7.0/srcs/fastparse-shaded_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fastparse-shaded_2.12/srcs/fastparse-shaded_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -970,20 +887,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-runtime-rpc-scala_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "c9a3879b3230c9cc06756cc7226cb55f61332ee6"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-scala_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-scala_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-scala_2.12/jars/idealingua-v1-runtime-rpc-scala_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-runtime-rpc-scala_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "9260c697092695ab4eb701097709cca8b1a936ce"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-scala_2.12/0.7.0/srcs/idealingua-v1-runtime-rpc-scala_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-scala_2.12/srcs/idealingua-v1-runtime-rpc-scala_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1330,20 +1239,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-runtime-rpc-typescript_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "75ddf622873fcc0f0bf2000451b0192cb24a09f3"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-typescript_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-typescript_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-typescript_2.12/jars/idealingua-v1-runtime-rpc-typescript_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-runtime-rpc-typescript_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "72ec341edcff590a321473ca469e01ff35481ae6"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-typescript_2.12/0.7.0/srcs/idealingua-v1-runtime-rpc-typescript_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-typescript_2.12/srcs/idealingua-v1-runtime-rpc-typescript_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1354,20 +1255,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-runtime-rpc-go_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "1fd2d67fb290958f456d77956cb87109eab64e76"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-go_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-go_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-go_2.12/jars/idealingua-v1-runtime-rpc-go_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-runtime-rpc-go_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "01bb3682ae3e6ee07fcee7d681c095d8c9f1ef1b"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-go_2.12/0.7.0/srcs/idealingua-v1-runtime-rpc-go_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-go_2.12/srcs/idealingua-v1-runtime-rpc-go_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1378,20 +1271,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-runtime-rpc-c-sharp_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "40ae131709c81cb0245c79ce79634a811b651610"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-c-sharp_2.12/0.7.0/jars/idealingua-v1-runtime-rpc-c-sharp_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-c-sharp_2.12/jars/idealingua-v1-runtime-rpc-c-sharp_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-runtime-rpc-c-sharp_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "4df52f4712a8281fd6829ea0cd50accfefee6d3b"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-c-sharp_2.12/0.7.0/srcs/idealingua-v1-runtime-rpc-c-sharp_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-runtime-rpc-c-sharp_2.12/srcs/idealingua-v1-runtime-rpc-c-sharp_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1402,20 +1287,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-v1-test-defs_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "b54bbbfc1e2d83a8471323535e01f7078b0a2d1d"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-test-defs_2.12/0.7.0/jars/idealingua-v1-test-defs_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-test-defs_2.12/jars/idealingua-v1-test-defs_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-v1-test-defs_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "a2e85d97509b318150b244cd5735ab4fb1b4b867"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-v1-test-defs_2.12/0.7.0/srcs/idealingua-v1-test-defs_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-v1-test-defs_2.12/srcs/idealingua-v1-test-defs_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1458,20 +1335,12 @@
                     "artifacts" : [
                         {
                             "name" : "idealingua-runtime-rpc-http4s_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "e115e7bbf4727e657d374230b4236a014ed39651"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-http4s_2.12/0.7.0/jars/idealingua-runtime-rpc-http4s_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-http4s_2.12/jars/idealingua-runtime-rpc-http4s_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "idealingua-runtime-rpc-http4s_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "d524839886be6f44b42fb65247ecd65a49958694"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-http4s_2.12/0.7.0/srcs/idealingua-runtime-rpc-http4s_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/idealingua-runtime-rpc-http4s_2.12/srcs/idealingua-runtime-rpc-http4s_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1482,20 +1351,12 @@
                     "artifacts" : [
                         {
                             "name" : "logstage-core_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "57bab8c0b5f03b1733b173804e78d37567e1f744"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-core_2.12/0.7.0/jars/logstage-core_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-core_2.12/jars/logstage-core_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "logstage-core_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "fcff1f52ebac7e1fb9d2b7168e895456f0abf6d5"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-core_2.12/0.7.0/srcs/logstage-core_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-core_2.12/srcs/logstage-core_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1506,20 +1367,12 @@
                     "artifacts" : [
                         {
                             "name" : "logstage-api_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "acf51045e457a16e124b89af9a056ebd3c6b3877"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-api_2.12/0.7.0/jars/logstage-api_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-api_2.12/jars/logstage-api_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "logstage-api_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "cc10fdc0040ec373db1c3869a72637f501024938"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-api_2.12/0.7.0/srcs/logstage-api_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-api_2.12/srcs/logstage-api_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1530,20 +1383,12 @@
                     "artifacts" : [
                         {
                             "name" : "fundamentals-reflection_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "e624fb821f8081289b8668200a35e44a3f04e403"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-reflection_2.12/0.7.0/jars/fundamentals-reflection_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-reflection_2.12/jars/fundamentals-reflection_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "fundamentals-reflection_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "28a6b91059223b6f95fd560f99a9effa311d7432"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/fundamentals-reflection_2.12/0.7.0/srcs/fundamentals-reflection_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/fundamentals-reflection_2.12/srcs/fundamentals-reflection_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1554,20 +1399,12 @@
                     "artifacts" : [
                         {
                             "name" : "logstage-adapter-slf4j_2.12",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "e9d1df52fd8bd1933178efdce576e8006ef63e5a"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-adapter-slf4j_2.12/0.7.0/jars/logstage-adapter-slf4j_2.12.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-adapter-slf4j_2.12/jars/logstage-adapter-slf4j_2.12-0.7.0.jar"
                         },
                         {
                             "name" : "logstage-adapter-slf4j_2.12",
                             "classifier" : "sources",
-                            "checksum" : {
-                                "type" : "sha1",
-                                "digest" : "812eddcd3cb2c3eb0f57a2fecbe982e68d43a566"
-                            },
-                            "path" : "/Users/rtwnk/.ivy2/local/com.github.pshirshov.izumi.r2/logstage-adapter-slf4j_2.12/0.7.0/srcs/logstage-adapter-slf4j_2.12-sources.jar"
+                            "path" : "/Users/rtwnk/.ivy2/cache/com.github.pshirshov.izumi.r2/logstage-adapter-slf4j_2.12/srcs/logstage-adapter-slf4j_2.12-0.7.0-sources.jar"
                         }
                     ]
                 },
@@ -1968,6 +1805,38 @@
                             "name" : "activation",
                             "classifier" : "sources",
                             "path" : "/Users/rtwnk/.ivy2/cache/javax.activation/activation/srcs/activation-1.1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scalactic",
+                    "name" : "scalactic_2.12",
+                    "version" : "3.0.5",
+                    "artifacts" : [
+                        {
+                            "name" : "scalactic_2.12",
+                            "path" : "/Users/rtwnk/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.5.jar"
+                        },
+                        {
+                            "name" : "scalactic_2.12",
+                            "classifier" : "sources",
+                            "path" : "/Users/rtwnk/.ivy2/cache/org.scalactic/scalactic_2.12/srcs/scalactic_2.12-3.0.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scalatest",
+                    "name" : "scalatest_2.12",
+                    "version" : "3.0.5",
+                    "artifacts" : [
+                        {
+                            "name" : "scalatest_2.12",
+                            "path" : "/Users/rtwnk/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.5.jar"
+                        },
+                        {
+                            "name" : "scalatest_2.12",
+                            "classifier" : "sources",
+                            "path" : "/Users/rtwnk/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.5-sources.jar"
                         }
                     ]
                 }

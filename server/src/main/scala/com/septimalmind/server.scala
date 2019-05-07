@@ -21,7 +21,32 @@ import org.http4s.server.{AuthMiddleware, Router}
 import org.http4s.syntax.kleisli._
 import scalaz.zio.IO
 import scalaz.zio.interop.catz._
-
+import cats.data.{Kleisli, OptionT}
+import cats.effect._
+import com.github.pshirshov.izumi.functional.bio.BIO._
+import com.github.pshirshov.izumi.functional.bio.BIORunner
+import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s._
+import com.github.pshirshov.izumi.idealingua.runtime.rpc._
+import com.github.pshirshov.izumi.logstage.api.IzLogger
+import com.septimalmind.server.externals.TokenService
+import com.septimalmind.server.idl.RequestContext.{AdminRequest, ClientRequest, GuestRequest}
+import com.septimalmind.server.idl.{NetworkContext, RequestContext}
+import com.septimalmind.server.persistence.{UserRepo, UserSessionRepo}
+import com.septimalmind.server.services.auth.LoginService
+import com.septimalmind.server.services.users.ProfileService
+import com.septimalmind.services.auth.LoginServiceWrappedServer
+import com.septimalmind.services.companies.CompanyId
+import com.septimalmind.services.users.{UserId, UserProfileServiceWrappedServer}
+import com.septimalmind.shared.RuntimeContext
+import org.http4s.Request
+import org.http4s.server.blaze.BlazeServerBuilder
+import org.http4s.server.{AuthMiddleware, Router}
+import org.http4s.syntax.kleisli._
+import scalaz.zio.IO
+import scalaz.zio.interop.catz._
+import cats.effect._
+import org.http4s._
+import org.http4s.dsl.io._
 import scala.util.Try
 
 object server extends App with RuntimeContext {
@@ -116,4 +141,11 @@ object server extends App with RuntimeContext {
     val wsSessionStorage: WsSessionsStorage[IO, String, RequestContext] = new WsSessionsStorageImpl[rt.type](rt.self, logger, codec)
     (listeners, wsContextProvider, wsSessionStorage)
   }
+
+  private def prepareHttp4sRouter: HttpRoutes[IO[Throwable, ?]] =
+    HttpRoutes.of {
+      case GET -> Root / "heartbeat" =>
+        Sync[IO[Throwable, ?]]
+          .pure(Response(Status.Ok, headers = Headers(Header("Response-Issuer", "PUT_SERVICE_NAME_HERE"))))
+    }
 }
