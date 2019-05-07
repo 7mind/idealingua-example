@@ -37,11 +37,24 @@ object server extends App with RuntimeContext {
     case _ => throw new IllegalArgumentException("REJECTED. unknown request context")
   }
 
-  val idlRouter = setupIDLRuntime(Set(loginAPI, adminAPI): Set[IRTWrappedService[IO, RequestContext]], Set.empty, logger)
+  val services = Set(loginAPI, adminAPI): Set[IRTWrappedService[IO, RequestContext]]
 
-  val allRoutes = Router(List(idlRouter).map {
-    svc => "/" -> svc
-  }: _*).orNotFound
+  val idlRouter = "/v2/" -> setupIDLRuntime(
+    services,
+    Set.empty,
+    logger
+  )
+  val legacyRouter = "/v1/" -> prepareHttp4sRouter
+
+  val allRoutes = Router(List(idlRouter, idlRouter): _*).orNotFound
+
+  private val port = 8080
+
+  logger.info(s"starting your server on ${port -> "port"}")
+
+  val serviceNames = services.map(_.serviceId.value)
+
+  logger.info(s"list of IDL:\n${serviceNames.mkString("\n", "\n", "\n") -> "APIs"}")
 
   val server = BlazeServerBuilder[IO[Throwable, ?]]
     .bindHttp(8080, "0.0.0.0")
@@ -66,7 +79,19 @@ object server extends App with RuntimeContext {
             OptionT.fromOption(prepareRequest(request))
       }
 
-    val server = new HttpServer[rt.type](rt.self, serverMultiplexor, clientMultiplexor, AuthMiddleware(authUser), wsContextProvider, wsSessionStorage, listeners.toSeq, logger, printer)
+    val server = new HttpServer[rt.type](
+      rt.self,
+      serverMultiplexor,
+      clientMultiplexor,
+      AuthMiddleware(authUser),
+      wsContextProvider,
+      wsSessionStorage,
+      listeners.toSeq,
+      logger,
+      printer
+    ) {
+
+    }
 
     server.service
   }

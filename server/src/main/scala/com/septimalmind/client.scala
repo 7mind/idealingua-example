@@ -9,10 +9,11 @@ import com.septimalmind.services.users.UserProfileServiceWrappedClient
 import com.septimalmind.shared.RuntimeContext
 import org.http4s.{Header, Request, Uri}
 import scalaz.zio.IO
+import com.github.pshirshov.izumi.functional.bio.BIO._
 
 object client extends App with RuntimeContext {
 
-  val uri = Uri.fromString("http://localhost:8080").right.get
+  val uri = Uri.fromString("http://localhost:8080/v2").right.get
 
   val clients: Set[IRTWrappedClient] = Set(LoginServiceWrappedClient, UserProfileServiceWrappedClient)
 
@@ -26,7 +27,4 @@ object client extends App with RuntimeContext {
     }
   }
   val loginClient = new LoginServiceWrappedClient[IO](clientDispatcher)
-
-  val a = bio.unsafeRun(loginClient.logout())
-
 }

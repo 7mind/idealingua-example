@@ -13,12 +13,14 @@ import scalaz.zio.internal.NamedThreadFactory
 
 import scala.concurrent.duration.FiniteDuration
 import scalaz.zio.interop.catz._
+import com.github.pshirshov.izumi.logstage.sink.ConsoleSink
+import com.github.pshirshov.izumi.logstage.api._
 
 trait RuntimeContext {
 
   val printer: io.circe.Printer = io.circe.Printer.spaces2
 
-  lazy val logger: IzLogger = IzLogger.DebugLogger
+  lazy val logger: IzLogger = setupLogger
 
   implicit lazy val bio: BIORunner[IO] = setupBio(logger)
 
@@ -46,5 +48,11 @@ trait RuntimeContext {
       case BIOExit.Termination(exception, _) =>
         IO.sync(logger.warn(s"Fiber terminated erroneously with unhandled defect $exception"))
     }, 1024, timerPool)
+  }
+
+  def setupLogger: IzLogger = {
+    val textSink = ConsoleSink.text(colored = true)
+    val sinks = List(textSink)
+    IzLogger.apply(Log.Level.Trace, sinks)
   }
 }
