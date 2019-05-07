@@ -74,7 +74,7 @@ class LoginService[F[+ _, + _]: BIO](
     }
 
   def completeLogin(ctx: RequestContext, token: String): F[DomainFailure, AccessResponse] = {
-    
+    ???
   }
     
 

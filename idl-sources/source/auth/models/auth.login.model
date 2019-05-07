@@ -18,5 +18,5 @@ enum TwoFactorAuthFormat {
     TOTP
     Email
     SMS
-    
+    None
 }
