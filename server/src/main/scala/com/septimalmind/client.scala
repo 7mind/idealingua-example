@@ -50,7 +50,6 @@ object client extends App with RuntimeContext {
 
   val out = for {
     signupToken <- adminClient.signUp(SignUpRequest("test-user", "email@foo.com", "+3801234567", "qwerty12345"))
-    _  = println(signupToken.accessToken)
     _ <- adminClient
           .login(EmailPassword("wrong-email", "qwerty12345"))
           .flip

@@ -21,8 +21,6 @@ class UserRepo[F[+_, +_]: BIO] {
   }
 
   def findByEmail(email: String) : F[DomainFailure, UserId] = {
-    println(email)
-    println(usersStorage)
     fromOption(DomainFailure(DomainFailureCode.EntityNotFound, Some("user with email not found")))(usersStorage.find(_._2.email == email).map(_._1))
   }
 }
