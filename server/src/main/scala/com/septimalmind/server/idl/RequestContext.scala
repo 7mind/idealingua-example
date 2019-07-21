@@ -2,7 +2,6 @@ package com.septimalmind.server.idl
 
 import com.septimalmind.services.companies.CompanyId
 import com.septimalmind.services.users.UserId
-import org.http4s.Header
 
 import scala.util.Try
 

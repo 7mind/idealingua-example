@@ -8,11 +8,11 @@ import com.github.pshirshov.izumi.functional.bio.{BIOExit, BIORunner}
 import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s.Http4sRuntime
 import com.github.pshirshov.izumi.logstage.api.IzLogger
 import com.septimalmind.server.idl.RequestContext
-import scalaz.zio.IO
-import scalaz.zio.internal.NamedThreadFactory
+import zio.IO
+import zio.internal.NamedThreadFactory
 
 import scala.concurrent.duration.FiniteDuration
-import scalaz.zio.interop.catz._
+import zio.interop.catz._
 import com.github.pshirshov.izumi.logstage.sink.ConsoleSink
 import com.github.pshirshov.izumi.logstage.api._
 
