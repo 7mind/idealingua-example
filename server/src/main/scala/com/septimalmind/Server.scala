@@ -1,29 +1,7 @@
-import cats.data.{Kleisli, OptionT}
-import cats.effect._
-import com.github.pshirshov.izumi.functional.bio.BIO._
-import com.github.pshirshov.izumi.functional.bio.BIORunner
-import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s._
+package com.septimalmind
+
 import com.github.pshirshov.izumi.idealingua.runtime.rpc.{ContextExtender, IRTClientMultiplexor, IRTServerMultiplexor, _}
-import com.github.pshirshov.izumi.logstage.api.IzLogger
-import com.septimalmind.server.externals.TokenService
-import com.septimalmind.server.idl.RequestContext.{AdminRequest, ClientRequest, GuestRequest}
-import com.septimalmind.server.idl.{NetworkContext, RequestContext}
-import com.septimalmind.server.persistence.{UserRepo, UserSessionRepo}
-import com.septimalmind.server.services.auth.LoginService
-import com.septimalmind.server.services.users.ProfileService
-import com.septimalmind.services.auth.LoginServiceWrappedServer
-import com.septimalmind.services.companies.CompanyId
-import com.septimalmind.services.users.{UserId, UserProfileServiceWrappedServer}
-import com.septimalmind.shared.RuntimeContext
-import org.http4s.Request
-import org.http4s.server.blaze.BlazeServerBuilder
-import org.http4s.server.{AuthMiddleware, Router}
-import org.http4s.syntax.kleisli._
-import scalaz.zio.IO
-import scalaz.zio.interop.catz._
 import cats.data.{Kleisli, OptionT}
-import cats.effect._
-import com.github.pshirshov.izumi.functional.bio.BIO._
 import com.github.pshirshov.izumi.functional.bio.BIORunner
 import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s._
 import com.github.pshirshov.izumi.idealingua.runtime.rpc._
@@ -35,8 +13,7 @@ import com.septimalmind.server.persistence.{UserRepo, UserSessionRepo}
 import com.septimalmind.server.services.auth.LoginService
 import com.septimalmind.server.services.users.ProfileService
 import com.septimalmind.services.auth.LoginServiceWrappedServer
-import com.septimalmind.services.companies.CompanyId
-import com.septimalmind.services.users.{UserId, UserProfileServiceWrappedServer}
+import com.septimalmind.services.users.UserProfileServiceWrappedServer
 import com.septimalmind.shared.RuntimeContext
 import org.http4s.Request
 import org.http4s.server.blaze.BlazeServerBuilder
@@ -47,9 +24,8 @@ import scalaz.zio.interop.catz._
 import cats.effect._
 import org.http4s._
 import org.http4s.dsl.io._
-import scala.util.Try
 
-object server extends App with RuntimeContext {
+object Server extends App with RuntimeContext {
 
   private val tokenService = new TokenService[IO]
   private val userRepo = new UserRepo[IO]
@@ -91,9 +67,7 @@ object server extends App with RuntimeContext {
   bio.unsafeRun(server)
 
   def setupIDLRuntime(services: Set[IRTWrappedService[IO, RequestContext]], clients: Set[IRTWrappedClient], logger: IzLogger)(implicit bio: BIORunner[IO], timer: Timer[IO[Throwable, ?]]) = {
-
     val clientMultiplexor: IRTClientMultiplexor[IO] = new IRTClientMultiplexor[IO](clients)
-
     val serverMultiplexor = new IRTServerMultiplexor[IO, RequestContext, RequestContext](services, ContextExtender.id)
 
     val (listeners, wsContextProvider, wsSessionStorage) = setupWsContext(rt, logger, clientMultiplexor)
@@ -101,7 +75,7 @@ object server extends App with RuntimeContext {
     val authUser: Kleisli[OptionT[IO[Throwable, ?], ?], Request[IO[Throwable, ?]], RequestContext] =
       Kleisli {
         request: Request[IO[Throwable, ?]] =>
-            OptionT.fromOption(prepareRequest(request))
+          OptionT.fromOption(prepareRequest(request))
       }
 
     val server = new HttpServer[rt.type](
