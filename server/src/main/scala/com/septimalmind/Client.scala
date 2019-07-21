@@ -7,7 +7,7 @@ import com.septimalmind.services.auth.LoginServiceWrappedClient
 import com.septimalmind.services.users.UserProfileServiceWrappedClient
 import com.septimalmind.shared.RuntimeContext
 import org.http4s.{ Header, Request, Uri }
-import scalaz.zio.IO
+import zio.IO
 import com.septimalmind.services.companies.CompanyId
 import com.septimalmind.services.auth.SignUpRequest
 import com.septimalmind.services.auth.EmailPassword

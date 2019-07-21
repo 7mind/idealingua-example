@@ -19,8 +19,8 @@ import org.http4s.Request
 import org.http4s.server.blaze.BlazeServerBuilder
 import org.http4s.server.{AuthMiddleware, Router}
 import org.http4s.syntax.kleisli._
-import scalaz.zio.IO
-import scalaz.zio.interop.catz._
+import zio.IO
+import zio.interop.catz._
 import cats.effect._
 import org.http4s._
 import org.http4s.dsl.io._
@@ -120,6 +120,6 @@ object Server extends App with RuntimeContext {
     HttpRoutes.of {
       case GET -> Root / "heartbeat" =>
         Sync[IO[Throwable, ?]]
-          .pure(Response(Status.Ok, headers = Headers(Header("Response-Issuer", "PUT_SERVICE_NAME_HERE"))))
+          .pure(Response(Status.Ok, headers = Headers.of(Header("Response-Issuer", "PUT_SERVICE_NAME_HERE"))))
     }
 }
