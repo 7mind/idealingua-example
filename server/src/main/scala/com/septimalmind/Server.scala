@@ -38,7 +38,7 @@ object Server extends zio.App with RuntimeContext {
       services <- ZIO.fromTry(Try(createServices()))
       _ <- putStrLn(s"list of IDL:\n${services.map(_.serviceId.value).mkString("\n", "\n", "\n") -> "APIs"}")
       router = createHttpRouter(services)
-      server <- ZIO.runtime.flatMap { implicit rt =>
+      server <- ZIO.runtime[Server.Environment].flatMap { implicit rt =>
         BlazeServerBuilder[IO[Throwable, ?]]
           .bindHttp(port, "0.0.0.0")
           .withExecutionContext(scala.concurrent.ExecutionContext.global)
@@ -73,11 +73,7 @@ object Server extends zio.App with RuntimeContext {
       Set.empty,
       logger
     )
-    val heartbeatRoute = "/v1/" -> HttpRoutes.of {
-      case GET -> Root / "heartbeat" =>
-        Sync[IO[Throwable, ?]]
-          .pure(Response(Status.Ok, headers = Headers.of(Header("Response-Issuer", "PUT_SERVICE_NAME_HERE"))))
-    }
+    val heartbeatRoute = "/v1/" -> prepareHttp4sRouter
 
     Router(List(idlRouter, heartbeatRoute): _*).orNotFound
   }
@@ -130,5 +126,13 @@ object Server extends zio.App with RuntimeContext {
     ) {}
 
     server.service
+  }
+
+  def prepareHttp4sRouter: HttpRoutes[IO[Throwable, ?]] = {
+    HttpRoutes.of {
+      case GET -> Root / "heartbeat" =>
+        Sync[IO[Throwable, ?]]
+          .pure(Response(Status.Ok, headers = Headers.of(Header("Response-Issuer", "PUT_SERVICE_NAME_HERE"))))
+    }
   }
 }
