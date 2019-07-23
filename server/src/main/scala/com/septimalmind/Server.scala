@@ -30,14 +30,14 @@ import scala.util.Try
 
 object Server extends zio.App with RuntimeContext {
   private val port = 8080
+  private val printer = io.circe.Printer.spaces2
 
   override def run(args: List[String]): ZIO[Server.Environment, Nothing, Int] = {
-    import zio.interop.catz._
-
     val program = for {
       services <- ZIO.fromTry(Try(createServices()))
       _ <- putStrLn(s"list of IDL:\n${services.map(_.serviceId.value).mkString("\n", "\n", "\n") -> "APIs"}")
-      router = createHttpRouter(services)
+      runtime <- http4sRuntime(timer)
+      router = createHttpRouter(runtime, services)
       server <- ZIO.runtime[Server.Environment].flatMap { implicit rt =>
         BlazeServerBuilder[IO[Throwable, ?]]
           .bindHttp(port, "0.0.0.0")
@@ -67,8 +67,9 @@ object Server extends zio.App with RuntimeContext {
     Set(loginAPI, adminAPI)
   }
 
-  private def createHttpRouter(services: Set[IRTWrappedService[IO, RequestContext]]) = {
+  private def createHttpRouter(rt: Runtime, services: Set[IRTWrappedService[IO, RequestContext]]) = {
     val idlRouter = "/v2/" -> setupIDLRuntime(
+      rt,
       services,
       Set.empty,
       logger
@@ -78,9 +79,9 @@ object Server extends zio.App with RuntimeContext {
     Router(List(idlRouter, heartbeatRoute): _*).orNotFound
   }
 
-  private def setupIDLRuntime(services: Set[IRTWrappedService[IO, RequestContext]],
-                      clients: Set[IRTWrappedClient], logger: IzLogger)
-                     (implicit bio: BIORunner[IO], timer: Timer[IO[Throwable, ?]]): HttpRoutes[IO[Throwable, ?]] = {
+  private def setupIDLRuntime(rt: Runtime, services: Set[IRTWrappedService[IO, RequestContext]],
+                              clients: Set[IRTWrappedClient], logger: IzLogger)
+                             (implicit bio: BIORunner[IO], timer: Timer[IO[Throwable, ?]]): HttpRoutes[IO[Throwable, ?]] = {
     def prepareRequest(request: Request[IO[Throwable, ?]]) : Option[RequestContext] = {
       lazy val networkContext = NetworkContext(request.remoteAddr.getOrElse("0.0.0.0"))
       import org.http4s.syntax.string._
@@ -123,7 +124,7 @@ object Server extends zio.App with RuntimeContext {
       listeners.toSeq,
       logger,
       printer
-    ) {}
+    )
 
     server.service
   }

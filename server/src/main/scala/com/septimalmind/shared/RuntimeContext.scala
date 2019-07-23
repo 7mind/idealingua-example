@@ -4,32 +4,38 @@ import java.util.concurrent.{Executors, ThreadPoolExecutor}
 
 import cats.effect.{Clock, Timer}
 import com.github.pshirshov.izumi.functional.bio.BIORunner.FailureHandler
-import com.github.pshirshov.izumi.functional.bio.BIORunner.FailureHandler.Default
 import com.github.pshirshov.izumi.functional.bio.{BIOExit, BIORunner}
 import com.github.pshirshov.izumi.idealingua.runtime.rpc.http4s.Http4sRuntime
 import com.github.pshirshov.izumi.logstage.api.IzLogger
 import com.septimalmind.server.idl.RequestContext
-import zio.{IO, ZIO, clock}
-import zio.internal.NamedThreadFactory
+import zio.{IO, ZIO}
 
 import scala.concurrent.duration.FiniteDuration
 import zio.interop.catz._
 import com.github.pshirshov.izumi.logstage.sink.ConsoleSink
 import com.github.pshirshov.izumi.logstage.api._
+import com.septimalmind.Server
 
 trait RuntimeContext {
-  val printer: io.circe.Printer = io.circe.Printer.spaces2
-  lazy val logger: IzLogger = setupLogger
+  type Runtime = Http4sRuntime[IO, RequestContext, RequestContext, String, Unit, Unit]
 
-  implicit lazy val bio: BIORunner[IO] = setupBio(logger)
+  val logger: IzLogger = setupLogger
 
-//  implicit lazy val timer: Timer[IO[Throwable, ?]] = new Timer[IO[Throwable, ?]] {
-//    val clock: Clock[IO[Throwable, ?]] = Clock.create[IO[Throwable, ?]]
-//
-//    override def sleep(duration: FiniteDuration): ZIO[zio.clock.Clock, Nothing, Unit] = zio.clock.sleep(zio.duration.Duration.fromScala(duration))
-//  }
+  implicit val bio: BIORunner[IO] = setupBio(logger)
 
-  lazy val rt = new Http4sRuntime[IO, RequestContext, RequestContext, String, Unit, Unit](scala.concurrent.ExecutionContext.global)
+  implicit val zioClock = zio.clock.Clock.Live
+
+  implicit val timer: Timer[IO[Throwable, ?]] = new Timer[IO[Throwable, ?]] {
+    val clock: Clock[IO[Throwable, ?]] = Clock.create[IO[Throwable, ?]]
+
+    override def sleep(duration: FiniteDuration) = {
+      zio.clock.sleep(zio.duration.Duration.fromScala(duration)).provide(zioClock)
+    }
+  }
+
+  def http4sRuntime(implicit timer: Timer[IO[Throwable, ?]]): ZIO[Server.Environment, Nothing, Runtime] = ZIO.runtime.map {
+    implicit rt => new Runtime(scala.concurrent.ExecutionContext.global)
+  }
 
   def setupBio(logger: IzLogger): BIORunner[IO] = {
     val cpuPool: ThreadPoolExecutor = Executors.newFixedThreadPool(8).asInstanceOf[ThreadPoolExecutor]

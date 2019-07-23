@@ -23,8 +23,8 @@ libraryDependencies := Seq(
   "io.7mind.izumi"                %% "idealingua-v1-compiler"           % "0.8.6",
   "io.7mind.izumi"                %% "idealingua-v1-compiler"           % "0.8.6",
   "io.7mind.izumi"                %% "idealingua-v1-runtime-rpc-http4s" % "0.8.6",
-  "dev.zio"                       %% "zio"                              % "1.0.0-RC10-1",
-  "dev.zio"                       %% "zio-interop-cats"                 % "2.0.0.0-RC1",
+  "dev.zio"                       %% "zio"                              % "1.0.0-RC8-12",
+  "dev.zio"                       %% "zio-interop-cats"                 % "1.0.0-RC8-12",
   "org.scalactic"                 %% "scalactic"                        % "3.0.5",
   "org.scalatest"                 %% "scalatest"                        % "3.0.5" % "test"
 ) ++ Seq(

@@ -13,7 +13,7 @@ import com.septimalmind.services.shared.DomainFailure
 import com.septimalmind.services.users.UserId
 import com.septimalmind.shared.RuntimeContext
 import org.scalatest.WordSpec
-import scalaz.zio.IO
+import zio.IO
 
 class LoginRequestSpec extends WordSpec with RuntimeContext {
 
