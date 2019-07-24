@@ -5,6 +5,8 @@ import com.github.pshirshov.izumi.functional.bio.BIO._
 import com.septimalmind.services.shared.{DomainFailure, DomainFailureCode}
 import com.septimalmind.services.users.{UserId, UserProfile}
 
+import scala.language.higherKinds
+
 class UserRepo[F[+_, +_]: BIO] {
 
   private val bio: BIO[F] = implicitly

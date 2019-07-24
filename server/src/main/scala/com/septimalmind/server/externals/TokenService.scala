@@ -5,6 +5,8 @@ import com.github.pshirshov.izumi.functional.bio.BIO._
 import com.septimalmind.services.shared.{DomainFailure, DomainFailureCode}
 import com.septimalmind.services.users.UserId
 
+import scala.language.higherKinds
+
 class TokenService[F[+_, +_]: BIO] {
   def generateToken(userId: UserId) : F[DomainFailure, String] = {
     BIO[F].sync(userId.toString())
