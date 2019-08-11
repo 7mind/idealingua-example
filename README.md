@@ -30,8 +30,8 @@ At the moment we support following languages:
 
 | Language / Platform | Server | Client  |
 |-----------|----------------------------|----------------------------|
-| **Scala / JVM**          | **Yes** [(example)](./servers/scala-jvm-server) | **Yes** |
-| **TypeScript / Node.js** | **Yes**     | **Yes** [(example)](./clients/typescript-node-client) |
+| **Scala / JVM**          | **Yes** [(example)](./server/) | **Yes** |
+| **TypeScript / Node.js** | **Yes**     | **Yes** [(example)](./client/) |
 | **Go / Native**          | **Yes** | **Yes** |
 | **C# / .NET**             | **Yes** | **Yes** |
 
